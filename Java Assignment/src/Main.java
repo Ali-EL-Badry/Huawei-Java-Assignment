@@ -8,7 +8,7 @@ public class Main {
             for(int j=0;j<10;j++){
                 grid[i][j]='*';
             }
-        }
+        }}
     public static void main(String[] args) {
         while (true){
             // Main menu
