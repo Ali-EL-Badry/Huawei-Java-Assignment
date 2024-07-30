@@ -1,5 +1,5 @@
 package all;
-
+import java.util.Random;
 public abstract class item extends Character {
   protected int x;
   public item(int  x)
