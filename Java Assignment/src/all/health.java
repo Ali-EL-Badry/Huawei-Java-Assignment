@@ -1,4 +1,7 @@
 package all;
 
-public class health {
+public class health extends item {
+  public Manager (int x){
+        super(x);
+    }
 }
