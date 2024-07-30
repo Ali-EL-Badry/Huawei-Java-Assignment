@@ -1,4 +1,9 @@
 package all;
 
-public class item {
+public abstract class item {
+  protected int x;
+  public item(int  x)
+    {
+        this.x= x;
+    }
 }
