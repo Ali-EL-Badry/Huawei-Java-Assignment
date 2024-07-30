@@ -24,7 +24,9 @@ public class Main {
                 
                 while(true){
                     maze.printMaze();
-
+System.out.print("1.w=up/n2.s=down/n3.a=left/n4.d=right");
+                    char character=Scanner.next();
+                    player.move(character);
                 }
             }
             // Exit game
