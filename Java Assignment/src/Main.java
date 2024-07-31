@@ -1,6 +1,6 @@
-import java.util.Random;
 import java.util.Scanner;
 import all.*;
+
 public class Main {
     public static void main(String[] args) {
         while (true){
@@ -8,25 +8,21 @@ public class Main {
             System.out.println("# ===== Welcome to Maze Game ===== #");
             System.out.println("           1. Start Game           ");
             System.out.println("           2. Exit Game            ");
-            System.out.println("Your choice is : ");
+            System.out.print("Your choice is : ");
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
             // The Main Game
             if (choice == 1){
-                System.out.println("Please enter your name : ");
+                System.out.print("Please enter your name : ");
                 String name = input.next();
-                char pl = name.charAt(0);
-                player play = new player(pl);
-                Maze maze = new Maze();
-                Random rand = new Random();
-                int num = rand.nextInt(5);
-                monster[] monsters = new monster[num];
-                
+
+                player user = new player(name);
+                Maze maze = new Maze(user);
+
                 while(true){
                     maze.printMaze();
-System.out.print("1.w=up/n2.s=down/n3.a=left/n4.d=right");
-                    char character=Scanner.next();
-                    player.move(character);
+
+                    break;
                 }
             }
             // Exit game
@@ -35,8 +31,21 @@ System.out.print("1.w=up/n2.s=down/n3.a=left/n4.d=right");
                 break;
             }
             // Validation of Main menu
-            else
+            else{
                 System.out.println("Invalid choice");
+                continue;
+            }
+
+            while(true){
+                System.out.println("Do you want to continue? (Y/N): ");
+                String choice2 = input.next();
+                if (choice2.equals("N"))
+                    return;
+                else if(choice2.equals("Y"))
+                    break;
+                else
+                    System.out.println("Invalid choice");
+            }
         }
 
     }
