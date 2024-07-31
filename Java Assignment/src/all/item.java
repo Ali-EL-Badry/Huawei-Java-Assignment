@@ -1,20 +1,18 @@
 package all;
 import java.util.Random;
-public abstract class item extends Character {
-  protected int x;
-  public item(int  x)
-    {
-        this.x= x;
-    }
-  public iteem() {
+public class item{
+
+    protected int x, y, z;
+    public item() {
         Random r = new Random();
         int x , y , z;
         do {
-            x = r.nextInt(11);
-            y = r.nextInt(11);
-            z = r.nextInt(201);
+            x = r.nextInt(10);
+            y = r.nextInt(10);
         } while (x == 0 && y == 0);
+        this.x = x;
+        this.y = y;
 
-        super(x, y, z);
     }
+
 }
