@@ -8,13 +8,19 @@ public class player extends Character {
         return health;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
+    // Constructor of char
     public player(String play) {
         super(0, 0, 10);
-        this.name = play.charAt(0);
+
+        if(play.charAt(0) == 'M')
+            this.name = 'm';
+        else if(play.charAt(0) == 'H')
+            this.name = 'h';
+        else if (play.charAt(0) == 'P')
+            this.name = 'p';
+        else
+            this.name = play.charAt(0);
+
         this.health = 100;
     }
 }
