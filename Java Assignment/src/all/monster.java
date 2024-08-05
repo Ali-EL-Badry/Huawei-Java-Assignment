@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class monster extends Character{
 
+    // Constructor of char
     public monster() {
         Random rand = new Random();
         int x , y , z;
