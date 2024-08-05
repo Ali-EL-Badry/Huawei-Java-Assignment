@@ -18,30 +18,52 @@ public class Main {
                 System.out.print("Please enter your name : ");
                 String name = input.next();
 
+                // Set up the game
                 player user = new player(name);
                 Maze maze = new Maze(user);
 
+                // To keep code running
                 while (true) {
                     try {
+                        // Print the details of game
                         maze.printMaze();
                         System.out.println("Your health is : " + maze.getUser().getHealth());
                         System.out.println("Your power is : " + maze.getUser().getPower());
+
+                        // Get the Directions of movement
                         System.out.print("Enter The Direction(W/D/S/A): ");
                         String direction = input.next();
                         maze.moves(direction);
+
+                        // Check the losing case
                         if(maze.getUser().getHealth() <= 0){
                             System.out.println("You are dead.");
                             break;
                         }
+                        // Check the winning case
                         else if(maze.win()){
                             System.out.println("You win!");
                             break;
                         }
 
-                    } catch (Exception e) {
+                    }
+                    // Catch exception
+                    catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
 
+                }
+                // To see if he wants to continue or no
+                while (true) {
+                    System.out.println("Do you want to continue? (Y/N): ");
+                    String choice2 = input.next();
+                    choice2 = choice2.toUpperCase();
+                    if (choice2.equals("N"))
+                        return;
+                    else if (choice2.equals("Y"))
+                        break;
+                    else
+                        System.out.println("Invalid choice");
                 }
             }
             // Exit game
@@ -50,21 +72,8 @@ public class Main {
                 break;
             }
             // Validation of Main menu
-            else {
+            else
                 System.out.println("Invalid choice");
-                continue;
-            }
-
-            while (true) {
-                System.out.println("Do you want to continue? (Y/N): ");
-                String choice2 = input.next();
-                if (choice2.equals("N"))
-                    return;
-                else if (choice2.equals("Y"))
-                    break;
-                else
-                    System.out.println("Invalid choice");
-            }
         }
     }
 }
