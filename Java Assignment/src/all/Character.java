@@ -3,15 +3,12 @@ package all;
 public class Character {
     protected int x, y, power;
 
-    public void setPower(int power) {
-        this.power = power;
-    }
-
-
+    // Print Power
     public int getPower() {
         return power;
     }
 
+    // Constructor of char
     public Character(int x, int y, int power){
         this.x = x;
         this.y = y;
